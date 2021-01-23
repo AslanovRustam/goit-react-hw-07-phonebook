@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://AslanovRustam.github.io/goit-react-hw-07-phonebook",
-  "server": "json-server --delay 500 --port 4040 --watch db.json",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.6",
@@ -25,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "json-server --delay 500 --port 4040 --watch db.json"
   },
   "eslintConfig": {
     "extends": [

@@ -3,7 +3,7 @@ import Contactlist from './Contacts/Contacts';
 import Filter from './Filter/Filter';
 import s from './app.module.css';
 import { connect } from 'react-redux';
-import addContact from './redux/actions';
+import addContact from './redux/contacts-operations';
 
 function App() {
   return (

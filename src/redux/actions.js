@@ -1,37 +1,14 @@
 import types from './types';
-import shortid from 'shortid';
 import { createAction } from '@reduxjs/toolkit';
 
-//
-///=====ШАГ №1 - ванильный Redux
+export const addContactRequest = createAction('contacts/addContactRequest');
+export const addContactSuccess = createAction('contacts/addContactSuccess');
+export const addContactError = createAction('contacts/addContactError');
+// export const addContactRequest = createAction('contact/addContactRequest');
+// export const addContactSuccess = createAction('contact/addContactSuccess');
+// export const addContactError = createAction('contact/addContactError');
+export const deleteContactRequest = createAction('contacts/addContactRequest');
+export const deleteContactSuccess = createAction('contacts/addContactSuccess');
+export const deleteContactError = createAction('contacts/addContactError');
 
-// const addContact = (name, number) => ({
-//   type: types.ADD,
-//   payload: {
-//     id: shortid.generate(),
-//     name,
-//     number,
-//   },
-// });
-
-// const deleteContact = contactId => ({
-//   type: types.DELETE,
-//   payload: contactId,
-// });
-
-// const changeFilter = value => ({
-//   type: types.FILTER,
-//   payload: value,
-// });
-const addContact = createAction(types.ADD, (name, number) => {
-  return {
-    payload: {
-      id: shortid.generate(),
-      name,
-      number,
-    },
-  };
-});
-const changeFilter = createAction(types.FILTER);
-const deleteContact = createAction(types.DELETE);
-export default { addContact, deleteContact, changeFilter };
+export const changeFilter = createAction(types.FILTER);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import s from './form.module.css';
 import shortid from 'shortid';
 import { connect } from 'react-redux';
-import contactActions from '../redux/actions';
+import contactOperations from '../redux/contacts-operations';
 import store from '../redux/store';
 
 function Form({ onSubmit }) {
@@ -69,7 +69,8 @@ function Form({ onSubmit }) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (name, number) => dispatch(contactActions.addContact(name, number)),
+  onSubmit: (name, number) =>
+    dispatch(contactOperations.addContact(name, number)),
 });
 
 export default connect(null, mapDispatchToProps)(Form);

@@ -2,6 +2,7 @@ import s from './contacs.module.css';
 import { connect } from 'react-redux';
 import deleteContact from '../redux/contacts-operations';
 import contactsSelectors from '../redux/contacts-selectors';
+import contactsOperations from '../redux/contacts-operations';
 
 const Contactlist = ({ contacts, onDeleteContact }) => {
   return (
@@ -35,6 +36,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   onDeleteContact: id => dispatch(deleteContact(id)),
+  fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contactlist);

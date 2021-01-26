@@ -10,6 +10,9 @@ import {
   deleteContactRequest,
   deleteContactSuccess,
   deleteContactError,
+  fetchContactRequest,
+  fetchContactSuccess,
+  fetchContactError,
 } from './actions';
 
 const contactsFirstRender = [
@@ -19,6 +22,7 @@ const contactsFirstRender = [
   { id: 'id-4', name: 'Thomas Jefferson', number: '227-91-26' },
 ];
 const contacts = createReducer([], {
+  [fetchContactSuccess]: (state, { payload }) => payload,
   [addContactSuccess]: (state, action) => [...state, action.payload],
 
   [deleteContactSuccess]: (state, { payload }) =>
@@ -36,6 +40,9 @@ const filter = (state = '', { type, payload }) => {
 };
 
 const loading = createReducer(false, {
+  [fetchContactRequest]: () => true,
+  [fetchContactSuccess]: () => false,
+  [fetchContactError]: () => false,
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
   [addContactError]: () => false,

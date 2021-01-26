@@ -1,10 +1,18 @@
 import s from './contacs.module.css';
 import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import deleteContact from '../redux/contacts-operations';
 import contactsSelectors from '../redux/contacts-selectors';
 import contactsOperations from '../redux/contacts-operations';
 
 const Contactlist = ({ contacts, onDeleteContact }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(contactsOperations.fetchContacts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className={s.contactsList}>
       <h2 className={s.contactsTitle}>Contacts</h2>

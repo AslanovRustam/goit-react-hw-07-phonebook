@@ -22,7 +22,7 @@ const contactsFirstRender = [
   { id: 'id-4', name: 'Thomas Jefferson', number: '227-91-26' },
 ];
 const contacts = createReducer([], {
-  [fetchContactSuccess]: (state, { payload }) => payload,
+  [fetchContactSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: (state, action) => [...state, action.payload],
 
   [deleteContactSuccess]: (state, { payload }) =>

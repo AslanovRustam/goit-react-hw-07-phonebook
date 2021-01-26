@@ -11,7 +11,7 @@ import {
   fetchContactError,
 } from './actions';
 
-axios.default.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:3000';
 
 const addContact = (name, number) => dispatch => {
   const contact = { name, number };

@@ -11,6 +11,6 @@ export const deleteContactError = createAction('contacts/addContactError');
 
 export const changeFilter = createAction(types.FILTER);
 
-export const fetchContactRequest = createAction('contacts/addContactRequest');
-export const fetchContactSuccess = createAction('contacts/addContactSuccess');
-export const fetchContactError = createAction('contacts/addContactError');
+export const fetchContactRequest = createAction('contacts/fetchContactRequest');
+export const fetchContactSuccess = createAction('contacts/fetchContactSuccess');
+export const fetchContactError = createAction('contacts/fetchContactError');

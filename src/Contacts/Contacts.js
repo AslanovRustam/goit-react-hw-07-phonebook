@@ -11,8 +11,8 @@ const Contactlist = ({ contacts, onDeleteContact }) => {
 
   useEffect(() => {
     dispatch(contactsOperations.fetchContacts());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [contacts]);
+  // console.log(contacts);
   return (
     <div className={s.contactsList}>
       <h2 className={s.contactsTitle}>Contacts</h2>

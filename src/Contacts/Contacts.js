@@ -6,12 +6,12 @@ import deleteContact from '../redux/contacts-operations';
 import contactsSelectors from '../redux/contacts-selectors';
 import contactsOperations from '../redux/contacts-operations';
 
-const Contactlist = ({ contacts, onDeleteContact }) => {
+const Contactlist = ({ contacts }) => {
   const dispatch = useDispatch();
-
+  const onDeleteContact = id => dispatch(contactsOperations.deleteContact(id));
   useEffect(() => {
     dispatch(contactsOperations.fetchContacts());
-  }, [contacts]);
+  }, []);
   // console.log(contacts);
   return (
     <div className={s.contactsList}>
@@ -43,7 +43,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  onDeleteContact: id => dispatch(deleteContact(id)),
+  // onDeleteContact: id => dispatch(deleteContact(id)),
   fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
 });
 
